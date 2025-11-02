@@ -1,0 +1,54 @@
+Sweet Shop Management System - Test Instructions
+
+Prerequisites:
+1. Java JDK 11 or higher installed
+2. Maven installed
+3. IDE (preferably IntelliJ IDEA or Eclipse) installed
+
+How to Run Tests:
+
+1. Using Maven Command Line:
+   - Open terminal in the project root directory
+   - Run command: mvn clean test
+
+2. Using IDE:
+   - Right-click on the test folder (src/test/java/com/sweetshop)
+   - Select "Run Tests" or "Run All Tests"
+
+Test Cases Overview:
+
+1. MenuItemTest
+   - Tests creation of menu items
+   - Verifies item properties (name, price, category)
+
+2. CartTest
+   - Tests adding items to cart
+   - Tests removing items from cart
+   - Tests cart total calculation
+   - Tests clearing cart
+
+3. MenuTest
+   - Tests retrieving all menu items
+   - Tests filtering items by category
+   - Verifies category-based filtering
+
+4. OrderTest
+   - Tests order creation from cart
+   - Verifies order properties
+   - Tests order total calculation
+
+Expected Results:
+- All tests should pass successfully
+- Each test verifies a specific functionality of the system
+- Test coverage includes all main features of the system
+
+Troubleshooting:
+1. If tests fail to compile:
+   - Ensure all dependencies are properly downloaded (run: mvn clean install)
+   - Verify JDK version matches project settings
+
+2. If tests fail to run:
+   - Check if Maven is properly installed
+   - Verify the project structure matches Maven standards
+
+Note: The tests follow TDD (Test-Driven Development) principles, ensuring that all functionality is properly tested before implementation.

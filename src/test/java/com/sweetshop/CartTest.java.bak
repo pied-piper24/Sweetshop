@@ -1,0 +1,40 @@
+﻿package com.sweetshop;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CartTest {
+    private Cart cart;
+    private Menu menu;
+
+    @BeforeEach
+    public void setUp() {
+        menu = new Menu();
+        cart = new Cart(menu);
+    }
+
+    @Test
+    public void testAddItem() {
+        cart.addItem("Laddu");
+        assertEquals(1, cart.getItems().size());
+        assertEquals(10.0, cart.getTotal(), 0.001);
+    }
+
+    @Test
+    public void testRemoveItem() {
+        cart.addItem("Laddu");
+        cart.removeItem("Laddu");
+        assertTrue(cart.getItems().isEmpty());
+        assertEquals(0.0, cart.getTotal(), 0.001);
+    }
+
+    @Test
+    public void testClearCart() {
+        cart.addItem("Laddu");
+        cart.clear();
+        assertTrue(cart.getItems().isEmpty());
+        assertEquals(0.0, cart.getTotal(), 0.001);
+    }
+}
+

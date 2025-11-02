@@ -1,0 +1,37 @@
+﻿package com.sweetshop;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+
+public class MenuTest {
+    private Menu menu;
+
+    @BeforeEach
+    public void setUp() {
+        menu = new Menu();
+    }
+
+    @Test
+    public void testGetAllItems() {
+        assertFalse(menu.getItems().isEmpty());
+    }
+
+    @Test
+    public void testGetItemsByCategory() {
+        List<MenuItem> sweets = menu.getItemsByCategory("Sweet");
+        List<MenuItem> savory = menu.getItemsByCategory("Savory");
+
+        assertFalse(sweets.isEmpty());
+        assertFalse(savory.isEmpty());
+
+        for (MenuItem item : sweets) {
+            assertEquals("Sweet", item.getCategory());
+        }
+
+        for (MenuItem item : savory) {
+            assertEquals("Savory", item.getCategory());
+        }
+    }
+}
